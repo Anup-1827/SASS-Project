@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin fontFamily {
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin flexPosition($parameter) {
+    display: flex;
+    justify-content: ($parameter);
+    align-items: center;
+}
+
+@mixin Button {
+    width: fit-content;
+    height: 44px;
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #6F3D18;
+    border: none;
+    margin-top: 15px;
+    -webkit-box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px #00000029;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin headingStyle {
+    .heading{
+            margin-bottom: 15px;
+            @include flexPosition(space-between);
+            .head{
+                p{
+                font-size: 28px;
+                font-weight: 100;
+                text-align: center;
+                }
+        }
+            .line{
+                width: 20%;
+                height: 1px;
+                background-color: $line;
+            }
+        }
+}
+
+@mixin paragraph{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+@mixin cardStyle{
+    margin: 0 15px;
+    .addtoCart {
+        width: 154px;
+        margin: 0 15px;
+    .upper {
+        @include flexPosition(space-between);
+        p {
+            font-family: 'Shadows Into Light', cursive;
+            font-style: italic;
+            color: $brown;
+            background-color: $lightPink;
+            padding: 0 5px;
+        }
+    }
+    .image {
+        width: 124px;
+        margin: auto;
+
+        img {
+            width: 124px;
+            height: 169px;
+        }
+    }
+    .info{
+        text-align: left;
+        h3{font-size: 12px;}
+        img{width: 11px;
+            height: 10px;}
+        p{font-size: 14px;
+         margin: 5px 0;
+        }  
+        .price{
+            @include flexPosition(space-between);
+        }  
+        
+    }
+    .btn{
+        @include Button;
+    }
+}
+}
+
+// Overflow in x direction
+@mixin overFlow {
+    @include flexPosition(flex-start);
+        // flex-wrap:wrap;
+        align-items: flex-start;
+        overflow-x: auto;
+}
